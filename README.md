@@ -1,35 +1,42 @@
-# Maintenance Request Maker
+# Mint Account Updater
 
-A Node.js-powered service to build and submit a maintenance request for my apartment complex.
+A Node.js-powered service to take a total from an IRA website and update
+the correlated account in Mint.
 
 ## Current Interactions
 
-> - Open and sign into website for apartment complex
-> - Enter the page to create a maintenance request
-> - Fill out form with desired information
-> - Submit request
+> - Open and sign into UBT
+> - Extract "grand total" number
+> - Open and sign into Mint
+> - Update IRA account with new total
 
 ## Usage
 
-> - Create file `src/credentials.json` similar to the following:
+> - Create file `src/secrets.json` similar to the following:
 
 ```json
 {
-  "username": "bleh@gmail.com",
-  "password": "xxxxx",
-  "phoneNumber": "(123) 456-7890"
+  "ubt": {
+    "username": "",
+    "securityQuestions": [
+      { "question": "", "answer": "" },
+      { "question": "", "answer": "" },
+      { "question": "", "answer": "" }
+    ],
+    "password": ""
+  },
+  "mint": {
+    "username": "",
+    "password": ""
+  }
 }
 ```
 
-> - Create file `src/requestDescription.js` (used javascript to take advantage of multiline string):
-
-```javascript
-const text = `Blah blah blah.`;
-
-module.exports = {
-  text
-};
-```
-
 > - Install requirements by executing `npm install`
-> - Invoke program with `node index.js`
+> - Invoke program with `npm run start-headed` or `npm run start-headless`
+>   depending on if you want the browser to be headless or not
+
+## Screenshots
+
+The utility will take a screenshot of both the UBT and Mint page as a final
+step on each page.

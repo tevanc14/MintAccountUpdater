@@ -5,9 +5,8 @@
 # Node
 node_modules/*
 
-# Screenshot
-screenshots/*
+# Screenshots
+screenshots/*.png
 
-# Stuff that doesn't need to be committed
+# Secrets
 **/secrets.json
-**/requestDescription.js

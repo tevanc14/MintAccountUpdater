@@ -1,14 +1,21 @@
 {
-  "username": "#Username",
-  "password": "#Password",
-  "login":
-    "body > div.container > div > div > div.col-md-5.col-md-push-7.col-sm-6.col-sm-push-6 > form > div:nth-child(6) > button",
-  "maintenanceRequest": "#content-main > div:nth-child(3) > p > a",
-  "commonAreaConcern": "#reasons_Common",
-  "description": "#desc",
-  "mayWeComeIn": "#enterIfNotHome_True",
-  "previousRequest": "#previouslyRequested_True",
-  "havePet": "#pet_False",
-  "phoneNumber": "#phone",
-  "submitRequest": "#submitBut"
+  "ubt": {
+    "username": "#userName",
+    "usernameNext": "#usernameForm > div > input",
+    "securityQuestion": "#contentBox > div > form > ul > li.questionLi > p",
+    "securityQuestionInput": "#Challenge_Questions_0__Answer",
+    "securityQuestionNext": "#contentBox > div > form > input.k-button",
+    "password": "#password",
+    "passwordNext": "#contentBox > form > input.k-button",
+    "total":
+      "#ctl00_BodyContent_mTable > tbody > tr:nth-child(6) > td:nth-child(3)"
+  },
+  "mint": {
+    "username": "#ius-userid",
+    "password": "#ius-password",
+    "login": "#ius-sign-in-submit-btn",
+    "account":
+      "#product-view-root > div.productPageContent > div.pageContents > div.settingsPage > div:nth-child(2) > div > section > div > div > div.col-xs-14.col-sm-14.col-md-14.col-lg-14.settingsBodyContainer > div > div > section > ul > div > li:nth-child(1) > div > div > ul > li > section > span:nth-child(1)",
+    "value": "#PFM\\3a OtherPropertyAccount\\3a 44771653_6791794_value"
+  }
 }

@@ -24,7 +24,7 @@ module.exports = class Mint {
   }
 
   async updateAccount(ubtFundTotal) {
-    await this.page.goto(urls.mintAccounts, { waitUntil: "networkidle2" });
+    await this.page.goto(urls.mintAccounts, { waitUntil: "networkidle0" });
     await this.page.click(this.selectors.account);
     await this.page.click(this.selectors.value);
     await this.clearCurrentValue();

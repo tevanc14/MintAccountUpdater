@@ -21,7 +21,7 @@ async function getUbtFundTotal() {
   const ubtPage = await getPage(urls.ubt);
   const ubt = new Ubt(ubtPage, selectors.ubt, secrets.ubt);
   await ubt.login();
-  await ubtPage.waitForNavigation({ waitUntil: "networkidle2" });
+  await ubtPage.waitForNavigation({ waitUntil: "networkidle0" });
   const fundTotal = await ubt.getFundTotal();
   await takeScreenshot(ubtPage, "ubt");
   return fundTotal;
@@ -31,7 +31,7 @@ async function updateMintAccount(ubtFundTotal) {
   const mintPage = await getPage(urls.mintLogin);
   const mint = new Mint(mintPage, selectors.mint, secrets.mint);
   await mint.login();
-  await mintPage.waitForNavigation({ waitUntil: "networkidle2" });
+  await mintPage.waitForNavigation({ waitUntil: "networkidle0" });
   await mint.updateAccount(ubtFundTotal);
   await takeScreenshot(mintPage, "mint");
 }
@@ -45,10 +45,10 @@ async function getPage(url) {
 }
 
 async function takeScreenshot(page, pageName) {
-  const time = new Date().getTime();
+  const time = new Date().toISOString();
 
   await page.screenshot({
-    path: "screenshots/" + pageName + "-finishedRequest-" + time + ".png",
+    path: "screenshots/" + time + "-" + pageName + ".png",
     fullPage: true
   });
 }

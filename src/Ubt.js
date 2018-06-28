@@ -7,9 +7,9 @@ module.exports = class Ubt {
 
   async login() {
     await this.enterUsername();
-    await this.page.waitForNavigation({ waitUntil: "networkidle2" });
+    await this.page.waitForNavigation({ waitUntil: "networkidle0" });
     await this.answerSecurityQuestion();
-    await this.page.waitForNavigation({ waitUntil: "networkidle2" });
+    await this.page.waitForNavigation({ waitUntil: "networkidle0" });
     await this.enterPassword();
   }
 
@@ -50,9 +50,14 @@ module.exports = class Ubt {
   }
 
   async getFundTotal() {
+    await sleep(2000);
     return await this.page.evaluate(() => {
       const table = document.getElementsByClassName("OnlineReport")[0];
       return table.rows[5].cells[2].innerText;
     });
   }
 };
+
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}

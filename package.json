@@ -1,6 +1,6 @@
 {
   "name": "mintaccountupdater",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Extract data from IRA website to update the linked account inside Mint.",
   "repository": {
     "type": "git",
@@ -8,6 +8,7 @@
   },
   "main": "index.js",
   "scripts": {
+    "clear-screenshots": "rm screenshots/*.png",
     "start-headed": "node index.js false",
     "start-headless": "node index.js true"
   },
